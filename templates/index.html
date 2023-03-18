@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="has-background-link-light">
+<head>
+  <title>{{patt}}</title>
+  <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+  <style>
+    body{
+      background-color: pink;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serifs;
+      background-image: url("/static/wall.jpg");
+    }
+
+    .vcenter{
+      display: flex;
+      justify-content: center;
+
+    }
+    .middle{
+      top: 50%;
+      vertical-align: middle;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .border{
+      border: 2px;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+      border-style: dashed;
+      border-color: rgb(39, 29, 29);
+      border-radius: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="vcenter">
+    <div class="middle">
+      <div hx-get="/" hx-trigger="every 1s" class="border">
+        <h1>TIME: {{message['hour']}}:{{message['minute']}}:{{message['second']}} </h1>
+        <h2>{{tick}}</h2>
+        <h2>{{patt}}</h2>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
